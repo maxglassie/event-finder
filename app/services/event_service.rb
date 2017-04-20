@@ -6,8 +6,8 @@ class EventService
     @api_key = ENV['api_key']
   end
 
-  def events
-    response = @connection.get("/json/events/search?location=80203&date=march&page_size=16&app_key=#{@api_key}")
+  def events(zip)
+    response = @connection.get("/json/events/search?location=#{zip}&date=march&page_size=16&app_key=#{@api_key}")
     events = JSON.parse(response.body)
   end
 

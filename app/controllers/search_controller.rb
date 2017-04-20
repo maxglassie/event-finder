@@ -1,7 +1,7 @@
 class SearchController < ApplicationController
 
   def index
-    @events = Events
+    @events = Event.find_by_zip(params["q"])
   end
 
 end

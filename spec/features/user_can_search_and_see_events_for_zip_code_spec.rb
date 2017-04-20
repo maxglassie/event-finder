@@ -5,7 +5,8 @@ RSpec.feature "user can search and see events for the zip code" do
 
     visit search_path
 
-    fill_in("q", with: "80202")
+    save_and_open_page
+    fill_in("Search by zip...", with: "80202")
     click_on("Find Events")
 
     expect(current_path).to eq(search_path)
